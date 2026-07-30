@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Registrant {
+  id        String     @id @default(cuid())
+  name      String
+  email     String
+  whatsapp  String
+  reason    String
+  status    String     @default("PENDING") // PENDING, APPROVED, REJECTED
+  notes     String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  emailLogs EmailLog[]
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+model EmailLog {
+  id           String     @id @default(cuid())
+  registrantId String
+  registrant   Registrant @relation(fields: [registrantId], references: [id], onDelete: Cascade)
+  recipient    String
+  subject      String
+  bodyHtml     String
+  status       String     // SENT, FAILED, SIMULATED
+  createdAt    DateTime   @default(now())
+
+  @@index([registrantId])
+  @@index([createdAt])
+}
+
+model Setting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}

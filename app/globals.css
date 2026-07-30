@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f4f0;
+  --foreground: #000000;
+  --primary: #ffd000;
+  --secondary: #4ade80;
+  --danger: #f87171;
+  --surface: #a78bfa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-danger: var(--danger);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-jakarta), sans-serif;
+  --font-heading: var(--font-space), sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space), sans-serif;
+}
+
+/* Custom Neobrutalism Utilities */
+@layer components {
+  .neo-card {
+    @apply bg-white border-3 border-black shadow-[4px_4px_0px_0px_#000000] rounded-xl transition-all;
+  }
+
+  .neo-card-hover {
+    @apply bg-white border-3 border-black shadow-[4px_4px_0px_0px_#000000] rounded-xl transition-all hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#000000];
+  }
+
+  .neo-button-primary {
+    @apply bg-[#FFD000] text-black font-extrabold border-2 border-black shadow-[4px_4px_0px_0px_#000000] px-6 py-3 rounded-lg transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000000] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer inline-flex items-center justify-center gap-2 text-sm md:text-base;
+  }
+
+  .neo-button-secondary {
+    @apply bg-[#A78BFA] text-black font-extrabold border-2 border-black shadow-[4px_4px_0px_0px_#000000] px-6 py-3 rounded-lg transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000000] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer inline-flex items-center justify-center gap-2 text-sm md:text-base;
+  }
+
+  .neo-button-success {
+    @apply bg-[#4ADE80] text-black font-extrabold border-2 border-black shadow-[4px_4px_0px_0px_#000000] px-4 py-2 rounded-lg transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000000] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer inline-flex items-center justify-center gap-1 text-sm;
+  }
+
+  .neo-button-danger {
+    @apply bg-[#F87171] text-black font-extrabold border-2 border-black shadow-[4px_4px_0px_0px_#000000] px-4 py-2 rounded-lg transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000000] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer inline-flex items-center justify-center gap-1 text-sm;
+  }
+
+  .neo-button-outline {
+    @apply bg-white text-black font-extrabold border-2 border-black shadow-[4px_4px_0px_0px_#000000] px-4 py-2 rounded-lg transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000000] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none cursor-pointer inline-flex items-center justify-center gap-2 text-sm;
+  }
+
+  .neo-input {
+    @apply w-full px-4 py-3 bg-white border-2 border-black rounded-lg text-black font-medium placeholder-gray-400 focus:outline-none focus:border-black focus:shadow-[4px_4px_0px_0px_#A78BFA] transition-all;
+  }
+
+  .neo-badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-extrabold border-2 border-black rounded-full shadow-[2px_2px_0px_0px_#000000] uppercase tracking-wider;
+  }
+}
+
+/* Custom scrollbar for better Neobrutalism aesthetics */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f0;
+  border-left: 2px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffd000;
+  border: 2px solid #000000;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
+
+/* Smooth transition for tabs and view changes */
+@keyframes tabFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tab-smooth {
+  animation: tabFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
