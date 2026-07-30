@@ -64,6 +64,43 @@ export default function HeroSection() {
               Lihat Video & Karya Siswa
             </a>
           </div>
+
+          {/* QR Code Barcode Card */}
+          <div className="mt-10 inline-flex flex-col sm:flex-row items-center gap-5 sm:gap-6 bg-white border-4 border-black p-5 sm:p-6 rounded-2xl shadow-[8px_8px_0px_0px_#000000] hover:translate-y-[-4px] hover:shadow-[12px_12px_0px_0px_#000000] transition-all max-w-xl mx-auto text-left relative overflow-hidden group">
+            {/* Decorative Top Accent Bar */}
+            <div className="absolute top-0 left-0 right-0 h-2 bg-[#FFD000] border-b-2 border-black" />
+
+            {/* QR Code Frame */}
+            <div className="relative mt-2 sm:mt-0 p-3 bg-[#FFD000] border-4 border-black rounded-xl shadow-[4px_4px_0px_0px_#000000] shrink-0 group-hover:rotate-1 transition-transform">
+              <div className="w-32 h-32 sm:w-36 sm:h-36 bg-white border-2 border-black rounded-lg overflow-hidden flex items-center justify-center p-2">
+                <img
+                  src="/qrcode.png"
+                  alt="QR Code Daftar Ekskul TIK SDN 231 Sukaasih"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="absolute -top-3 -right-3 bg-black text-[#FFD000] text-[10px] font-black uppercase px-2.5 py-0.5 border-2 border-black rounded shadow-[2px_2px_0px_0px_#A78BFA] animate-bounce">
+                SCAN ME! 📸
+              </span>
+            </div>
+
+            {/* Text Description */}
+            <div className="flex-1 text-center sm:text-left mt-2 sm:mt-0">
+              <div className="inline-block px-2.5 py-0.5 bg-[#A78BFA] text-black font-black text-xs uppercase border-2 border-black rounded mb-2 shadow-[2px_2px_0px_0px_#000000]">
+                📱 AKSES CEPAT & MUDAH
+              </div>
+              <h3 className="text-lg sm:text-xl font-black text-black uppercase leading-tight mb-1">
+                SCAN BARCODE DAFTAR
+              </h3>
+              <p className="text-xs sm:text-sm font-bold text-gray-700 leading-relaxed mb-3">
+                Arahkan kamera HP atau scanner QR untuk langsung masuk ke formulir pendaftaran Ekskul TIK SDN 231 Sukaasih!
+              </p>
+              <div className="flex items-center justify-center sm:justify-start gap-2 text-xs font-black uppercase text-gray-800">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#4ADE80] border border-black inline-block animate-pulse" />
+                Dapat dibagikan ke teman & grup WA
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Curriculum Grid Section */}
