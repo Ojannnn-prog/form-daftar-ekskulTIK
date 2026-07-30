@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Pendaftaran Ekskul TIK | SDN 231 Sukaasih",
   description: "Platform Pendaftaran Online Ekstrakurikuler Teknologi Informasi dan Komunikasi (TIK) SDN 231 Sukaasih",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.svg",
   },
 };
 

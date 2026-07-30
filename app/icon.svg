@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Neo-brutalist Background with shadow effect -->
+  <rect x="48" y="48" width="416" height="416" rx="96" fill="#000000" />
+  <rect x="24" y="24" width="416" height="416" rx="96" fill="#FFD000" stroke="#000000" stroke-width="24" />
+  
+  <!-- Computer Monitor Frame -->
+  <rect x="88" y="104" width="288" height="200" rx="24" fill="#000000" />
+  <!-- Screen Display -->
+  <rect x="112" y="128" width="240" height="152" rx="12" fill="#22C55E" />
+  
+  <!-- Terminal Prompt >_ -->
+  <path d="M 148 168 L 192 204 L 148 240" stroke="#000000" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <line x1="212" y1="244" x2="264" y2="244" stroke="#000000" stroke-width="24" stroke-linecap="round" />
+  
+  <!-- Stand & Base -->
+  <polygon points="192,304 272,304 296,376 168,376" fill="#000000" />
+  <rect x="136" y="376" width="192" height="32" rx="16" fill="#000000" />
+</svg>
