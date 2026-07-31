@@ -18,8 +18,10 @@ import {
   Sparkles,
   RefreshCw,
   AlertTriangle,
+  MessageCircle,
 } from "lucide-react";
 import { exportToExcel, exportToPDF, parseCSVImport, RegistrantData } from "@/lib/exportImport";
+import { formatWhatsAppUrl } from "@/lib/formatWa";
 import RegistrantDetailModal from "./RegistrantDetailModal";
 import RegistrantEditModal from "./RegistrantEditModal";
 
@@ -297,9 +299,19 @@ export default function PendaftarTable() {
                       )}
                     </td>
                     <td className="py-4 px-4">
-                      <div className="text-xs font-bold text-gray-900">
+                      <div className="text-xs font-bold text-gray-900 mb-1.5">
                         WA: {reg.whatsapp}
                       </div>
+                      <a
+                        href={formatWhatsAppUrl(reg.whatsapp)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#4ADE80] border-2 border-black rounded font-black text-[11px] text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#22c55e] hover:translate-y-[-1px] transition-all"
+                        title="Klik untuk pesan via WhatsApp"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5" />
+                        klik untuk pesan
+                      </a>
                     </td>
                     <td className="py-4 px-4">
                       <span
@@ -353,6 +365,17 @@ export default function PendaftarTable() {
                             <XCircle className="w-3.5 h-3.5" /> Tolak
                           </button>
                         )}
+
+                        {/* WhatsApp Chat Button */}
+                        <a
+                          href={formatWhatsAppUrl(reg.whatsapp)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-[#4ADE80] border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000000] hover:bg-[#22c55e] transition-colors inline-flex items-center justify-center"
+                          title="Klik untuk pesan (WhatsApp)"
+                        >
+                          <MessageCircle className="w-4 h-4 text-black" />
+                        </a>
 
                         {/* View Detail Modal */}
                         <button

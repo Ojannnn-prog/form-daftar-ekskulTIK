@@ -1,7 +1,18 @@
 "use client";
 
 import React from "react";
-import { X, User, Phone, MessageSquare, Calendar, ShieldCheck, Clock, FileText } from "lucide-react";
+import {
+  X,
+  User,
+  Phone,
+  MessageSquare,
+  Calendar,
+  ShieldCheck,
+  Clock,
+  FileText,
+  MessageCircle,
+} from "lucide-react";
+import { formatWhatsAppUrl } from "@/lib/formatWa";
 
 interface Registrant {
   id: string;
@@ -90,11 +101,22 @@ export default function RegistrantDetailModal({
 
           {/* Biodata Grid */}
           <div className="grid grid-cols-1 gap-4">
-            <div className="p-4 bg-white border-2 border-black rounded-xl">
-              <span className="text-xs font-black text-gray-500 uppercase flex items-center gap-1">
-                <Phone className="w-3.5 h-3.5" /> Nomor WhatsApp
-              </span>
-              <p className="font-extrabold text-black mt-1">{registrant.whatsapp}</p>
+            <div className="p-4 bg-white border-2 border-black rounded-xl flex items-center justify-between flex-wrap gap-3">
+              <div>
+                <span className="text-xs font-black text-gray-500 uppercase flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5" /> Nomor WhatsApp
+                </span>
+                <p className="font-extrabold text-black mt-1">{registrant.whatsapp}</p>
+              </div>
+              <a
+                href={formatWhatsAppUrl(registrant.whatsapp)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#4ADE80] border-2 border-black rounded-lg font-black text-xs text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#22c55e] hover:translate-y-[-1px] transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                klik untuk pesan
+              </a>
             </div>
           </div>
 
