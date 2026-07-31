@@ -303,7 +303,7 @@ export default function PendaftarTable() {
                         WA: {reg.whatsapp}
                       </div>
                       <a
-                        href={formatWhatsAppUrl(reg.whatsapp)}
+                        href={formatWhatsAppUrl(reg.whatsapp, reg.name)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#4ADE80] border-2 border-black rounded font-black text-[11px] text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#22c55e] hover:translate-y-[-1px] transition-all"
@@ -368,7 +368,7 @@ export default function PendaftarTable() {
 
                         {/* WhatsApp Chat Button */}
                         <a
-                          href={formatWhatsAppUrl(reg.whatsapp)}
+                          href={formatWhatsAppUrl(reg.whatsapp, reg.name)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="p-2 bg-[#4ADE80] border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000000] hover:bg-[#22c55e] transition-colors inline-flex items-center justify-center"

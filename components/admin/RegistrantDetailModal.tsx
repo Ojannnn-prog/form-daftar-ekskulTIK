@@ -109,7 +109,7 @@ export default function RegistrantDetailModal({
                 <p className="font-extrabold text-black mt-1">{registrant.whatsapp}</p>
               </div>
               <a
-                href={formatWhatsAppUrl(registrant.whatsapp)}
+                href={formatWhatsAppUrl(registrant.whatsapp, registrant.name)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#4ADE80] border-2 border-black rounded-lg font-black text-xs text-black shadow-[2px_2px_0px_0px_#000000] hover:bg-[#22c55e] hover:translate-y-[-1px] transition-all"
