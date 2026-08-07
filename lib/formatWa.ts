@@ -27,7 +27,7 @@ export function formatWhatsAppUrl(wa: string, name?: string): string {
   }
 
   const groupLink =
-    "https://chat.whatsapp.com/GZOK45zquUeACMYdR5Z0QV?s=cl&p=a&ilr=0";
+    "https://chat.whatsapp.com/LxOyI8NN6Ep4s0viRIhGM6?s=cl&p=a&ilr=0";
 
   const message = `*[BOT INFORMASI - EKSKUL TIK SDN 231 SUKAASIH]* 🤖✨
 
